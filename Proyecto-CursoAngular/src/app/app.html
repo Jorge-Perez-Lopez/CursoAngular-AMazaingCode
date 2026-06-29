@@ -1,7 +1,7 @@
-<h1> Hola {{ userName }}</h1>
+<h1> Username:  {{ userName }}</h1>
 
-<h1 (click)="addOne()"> Number: {{ number }}</h1>
+<h2> Number: {{ number }}</h2>
 
 
 
-<input type = "text" [value]="userName" >
+<input type = "text" [(ngModel)]="userName" (input)= "addOne()">
