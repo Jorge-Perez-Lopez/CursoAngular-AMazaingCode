@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
    userName: string = 'Jorge';
   number: number = 0;
+  conditional: boolean = true;
+  conditional2: string = 'Hola';
 
   addOne() {
     this.number++;
