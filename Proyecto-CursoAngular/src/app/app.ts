@@ -4,11 +4,16 @@ import { HeaderComponent } from './components/header/header';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, HeaderComponent],
-  templateUrl: './app.html',
+ templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class AppComponent {
    userName: string = 'Jorge';
+  number: number = 0;
 
+  addOne() {
+    this.number++;
+  }
 }
