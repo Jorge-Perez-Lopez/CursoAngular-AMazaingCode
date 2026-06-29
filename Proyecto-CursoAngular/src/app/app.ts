@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('Proyecto-CursoAngular');
+export class AppComponent {
+   userName: string = 'Jorge';
+
 }
