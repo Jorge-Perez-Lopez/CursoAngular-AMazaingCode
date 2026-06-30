@@ -33,3 +33,9 @@
 <h1> Bloque &#64; Input  - Comunicación padre-hijo</h1>
 
 <app-child [msg]="text" [person]="person"></app-child>
+
+<h1> Bloque &#64; Output |  Comunicación hijo-padre  &uarr </h1>
+
+<h2> Hola {{ name }} </h2>
+
+<app-child (login)="setName($event)"> </app-child>
