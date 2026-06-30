@@ -43,4 +43,11 @@ export class AppComponent {
   addOne() {
     this.number++;
   }
+
+  name: string = '';
+
+  setName(e: any) {
+    this.name = e;
+
+  }
 }
