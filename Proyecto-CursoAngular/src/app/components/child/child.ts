@@ -1,0 +1,15 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-child',
+  standalone: true,
+  imports: [],
+  templateUrl: './child.html',
+  styleUrl: './child.css',
+})
+export class ChildComponent {
+    @Input() msg: String = '';
+
+    @Input()
+    person: any
+}
