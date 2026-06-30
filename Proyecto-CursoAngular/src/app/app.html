@@ -22,7 +22,6 @@
     <p> {{ $index + 1 }} - {{ book }}</p>
  } </p>
 
- <h1> Bloque &#64; For  - Listas de objetos</h1>
  @for (animal of animals; track animal.id) {
   
         <li>
@@ -30,3 +29,7 @@
             <img [src] = "animal.img" alt="" width="200" >
         </li>
  }
+
+<h1> Bloque &#64; Input  - Comunicación padre-hijo</h1>
+
+<app-child [msg]="text" [person]="person"></app-child>

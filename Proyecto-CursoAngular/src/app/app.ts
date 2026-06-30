@@ -2,11 +2,12 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
 import { FormsModule } from '@angular/forms';
+import { ChildComponent } from './components/child/child';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FormsModule],
+  imports: [RouterOutlet, HeaderComponent, FormsModule, ChildComponent],
  templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -31,9 +32,14 @@ export class AppComponent {
         id: 3,
         name: "bird",
         img: "https://media.cnn.com/api/v1/images/stellar/prod/230309163059-01-bird.jpg?q=w_800,h_450,c_fill"
-    }
+    },
 ]
 
+ text: String = "Variable desde el componente padre";
+ person: any = {
+  sex: "hombre",
+  age: 20
+ }
   addOne() {
     this.number++;
   }
