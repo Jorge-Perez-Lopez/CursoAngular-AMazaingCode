@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
 import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './components/child/child';
+import Product from './models/Product';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,9 @@ import { ChildComponent } from './components/child/child';
 })
 export class AppComponent {
   userName: string;
+  myNumber: number;
+  myBoolean: boolean;
+  product: Product;
   number: number = 0;
   conditional: boolean = true;
   conditional2: string = 'Hola';
@@ -50,9 +54,17 @@ export class AppComponent {
     this.name = e;
 
   }
+  
 
   constructor() {
     this.userName = 'Jorge';
+    this.myNumber = 10;
+    this.myBoolean = true;
+    this.product = {
+      name: 'Computer',
+      price: 1000,
+      isForSale: true
+    }
   }
 
 }
