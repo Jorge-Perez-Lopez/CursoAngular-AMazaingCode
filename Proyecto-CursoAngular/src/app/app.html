@@ -40,14 +40,37 @@
 
 <app-child (login)="setName($event)"> </app-child>
 
-h1> Bloque &#64; Output API  |  Comunicación hijo-padre  &darr </h1>
+<h1> Bloque &#64; Output API  |  Comunicación hijo-padre  &darr </h1>
 
 <h2> Hola {{ name }} </h2>
 
 <app-child (login)="setName($event)"> </app-child>
 
-h1> Bloque &#64; ngClass |  Clases Dinámicas </h1>
+<h1> Bloque &#64; ngClass |  Clases Dinámicas </h1>
 
 <h2 [ngClass]="{dark: isDark, big: true}"> ¡Hola a tod@s!</h2>
 
 <button (click)="toggleDark()"> Toggle Dark </button>
+
+<h1> Bloque &#64; Reactive Forms </h1>
+
+<form [formGroup]="movieForm" (submit)="handleSubmit()">
+    
+        <fieldset>
+            <label for="movie-title"> Movie Title:</label>
+            <input type="text" id="movie-title" placeholder="Title" formControlName="title">
+        </fieldset>
+
+        <fieldset>
+            <label for="movie-duration"> Movie Duration:</label>
+            <input type="text" id="movie-duration" placeholder="Duration" formControlName="duration">
+        </fieldset>
+
+        <fieldset>
+            <label for="movie-director"> Movie Director:</label>
+            <input type="text" id="movie-director" placeholder="Director" formControlName="director">
+        </fieldset>
+
+        <button> Create Movie </button>
+
+</form>
