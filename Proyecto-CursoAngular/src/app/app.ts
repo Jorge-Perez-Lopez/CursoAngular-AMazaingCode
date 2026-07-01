@@ -4,11 +4,12 @@ import { HeaderComponent } from './components/header/header';
 import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './components/child/child';
 import Product from './models/Product';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FormsModule, ChildComponent],
+  imports: [RouterOutlet, HeaderComponent, FormsModule, ChildComponent, NgClass],
  templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -17,6 +18,10 @@ export class AppComponent {
   myNumber: number;
   myBoolean: boolean;
   product: Product;
+  isDark: boolean = false;
+  toggleDark() {
+    this.isDark = !this.isDark;
+  }
   number: number = 0;
   conditional: boolean = true;
   conditional2: string = 'Hola';
