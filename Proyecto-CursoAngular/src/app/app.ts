@@ -12,7 +12,7 @@ import { ChildComponent } from './components/child/child';
   styleUrl: './app.css'
 })
 export class AppComponent {
-   userName: string = 'Jorge';
+  userName: string;
   number: number = 0;
   conditional: boolean = true;
   conditional2: string = 'Hola';
@@ -50,4 +50,9 @@ export class AppComponent {
     this.name = e;
 
   }
+
+  constructor() {
+    this.userName = 'Jorge';
+  }
+
 }
