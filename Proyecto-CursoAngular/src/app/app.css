@@ -6,3 +6,8 @@
 .big {
     font-size: 4rem;
 }
+
+.form-error {
+    color: red;
+    font-size: 0.8em;
+}

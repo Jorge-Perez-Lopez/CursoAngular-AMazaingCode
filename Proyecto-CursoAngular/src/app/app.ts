@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ChildComponent } from './components/child/child';
 import Product from './models/Product';
 import { NgClass } from '@angular/common';
@@ -75,8 +75,8 @@ export class AppComponent {
       isForSale: true
     }
     
-    this.title = new FormControl('');
-    this.duration = new FormControl('');
+    this.title = new FormControl('', Validators.required);
+    this.duration = new FormControl('', [Validators.required, Validators.max(300)]);
     this.director = new FormControl('');
 
     this.movieForm = new FormGroup({
@@ -88,8 +88,8 @@ export class AppComponent {
 
   handleSubmit(): void {
 
-    console.log(this.movieForm.value);
-
+    console.log('Movie created: ', this.movieForm.value);
+    this.movieForm.reset();
   }
 
 }
