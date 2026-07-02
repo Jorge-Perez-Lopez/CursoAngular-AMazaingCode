@@ -11,12 +11,19 @@
 
     <button (click)="handleLogin()"> Login </button>
 
-    </div>
+</div>
+
 
 
 <div class="child" >
-
     <h2> Este es un componente hijo </h2>
 
     <h3> {{ productService.product.name }} </h3>
+
+    <h3> {{ productService.product.price }} </h3>
+
+    <button (click)="productService.setProductName('Televisión')"> Cambiar nombre </button>
+
+
 </div>
+

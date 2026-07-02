@@ -2,13 +2,13 @@ import { Component, input, output} from '@angular/core';
 import { ProductService } from '../../services/product';
 
 @Component({
-  selector: 'app-child',
+  selector: 'app-child2',
   standalone: true,
   imports: [],
-  templateUrl: './child.html',
-  styleUrl: './child.css',
+  templateUrl: './child2.html',
+  styleUrl: './child2.css',
 })
-export class ChildComponent {
+export class Child2Component {
     // @Input() msg: String = '';
     msg = input<String>('');
 
@@ -28,7 +28,6 @@ export class ChildComponent {
     }
 
     constructor(public productService: ProductService) {
-      
 
-  }
+    }
 }
