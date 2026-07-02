@@ -59,11 +59,18 @@
         <fieldset>
             <label for="movie-title"> Movie Title:</label>
             <input type="text" id="movie-title" placeholder="Title" formControlName="title">
+            @if  (title.invalid && title.touched) {
+                <p class="form-error"> Title is required </p>
+            }
         </fieldset>
 
         <fieldset>
             <label for="movie-duration"> Movie Duration:</label>
             <input type="text" id="movie-duration" placeholder="Duration" formControlName="duration">
+            @if  (duration.hasError('required') && duration.touched) {
+                <p class="form-error"> Duration is required </p>
+            } else if (duration.hasError('max') && duration.touched) {
+                <p class="form-error"> Duration must be less than 300 minutes </p>
         </fieldset>
 
         <fieldset>
@@ -71,6 +78,6 @@
             <input type="text" id="movie-director" placeholder="Director" formControlName="director">
         </fieldset>
 
-        <button> Create Movie </button>
+        <button [disabled]="movieForm.invalid"> Create Movie </button>
 
 </form>
