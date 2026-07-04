@@ -1,34 +1,25 @@
-import { Component, input, output} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product';
 
 @Component({
   selector: 'app-child',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './child.html',
-  styleUrl: './child.css',
+  styleUrls: ['./child.css'],
 })
 export class ChildComponent {
-    // @Input() msg: String = '';
-    msg = input<String>('');
+  @Input() msg: string = '';
+  @Input() person: any;
 
-   // @Input()
-   // person: any
+  userName: string = 'Jorge';
 
-   person = input<any>();
+  @Output() login: EventEmitter<string> = new EventEmitter<string>();
 
-   userName: string = 'Jorge';
-
-  // @Output() login: EventEmitter<string> = new EventEmitter<string>();
-
-  login = output<any>();
-
-   handleLogin() {
+  handleLogin() {
     this.login.emit(this.userName);
-    }
-
-    constructor(public productService: ProductService) {
-      
-
   }
+
+  constructor(public productService: ProductService) {}
 }
