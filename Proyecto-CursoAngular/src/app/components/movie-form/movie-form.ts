@@ -12,7 +12,7 @@ import { MovieService } from '../../services/movie.service';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './movie-form.html',
-  styleUrls: ['./movie-form.css']
+  styleUrl: './movie-form.css',
 })
 export class MovieFormComponent {
   movieForm: FormGroup;
@@ -41,4 +41,3 @@ export class MovieFormComponent {
     this.movieForm.reset();
   }
 }
-
