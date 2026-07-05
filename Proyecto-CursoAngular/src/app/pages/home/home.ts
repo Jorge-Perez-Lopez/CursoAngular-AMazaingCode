@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header';
 
 @Component({
@@ -9,4 +9,5 @@ import { HeaderComponent } from '../../components/header/header';
   styleUrl: './home.css'
 })
 export class HomeComponent {
+
 }

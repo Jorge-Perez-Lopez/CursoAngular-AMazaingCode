@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+﻿import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header';
 
@@ -8,12 +8,13 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HeaderComponent],
-    }).compileComponents();
-
+      imports: [HeaderComponent]
+    })
+    .compileComponents();
+    
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
