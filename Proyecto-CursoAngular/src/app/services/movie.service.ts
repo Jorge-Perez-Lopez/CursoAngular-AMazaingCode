@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import Movie from '../models/Movie';
 
 @Injectable({
@@ -10,12 +10,12 @@ export class MovieService {
   constructor() {
     this.movies = [
       {
-        name: 'El Señor de los Anillos',
+        name: 'El SeÃ±or de los Anillos',
         duration: 300,
         director: 'Peter Jackson'
       },
       {
-        name: 'La Naranja Mecánica',
+        name: 'La Naranja MecÃ¡nica',
         duration: 120,
         director: 'Stanley Kubrick'
       }

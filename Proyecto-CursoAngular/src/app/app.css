@@ -1,13 +1,4 @@
-.dark {
-    background-color: black;
-    color: white;
-}
-
-.big {
-    font-size: 4rem;
-}
-
-.form-error {
-    color: red;
-    font-size: 0.8em;
+﻿.form-error {
+  font-size: 0.8em;
+  color: red;
 }

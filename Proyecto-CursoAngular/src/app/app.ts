@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -6,16 +6,8 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class AppComponent implements OnInit {
-  constructor() {
+export class AppComponent {
 
-    console.log('Dentro del constructor');
-
-  }
-
-  ngOnInit(): void {
-    console.log('Dentro del ngOnInit');
-  }
 }
