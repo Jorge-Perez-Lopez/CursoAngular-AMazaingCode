@@ -1,26 +1,18 @@
 import { Service } from '@angular/core';
 import Note from '../../models/Note';
-@Service()
+import { HttpClient } from '@angular/common/http';
+
 export class NoteService {
+
+    readonly API_URL= "https://ca201119f4f919685321.free.beeceptor.com";
     notes: Note[];
 
-    constructor() {
-        this.notes = [
-            {
-                id: this.createId(),
-                title: "Cita con el médico",
-                marked: false
+    constructor(private http: HttpClient) {
+        this.notes = []
+    }
 
-            },
-
-            {
-                id: this.createId(),
-                title: "Contraseña del WiFi: 123456",
-                marked: true
-
-            }
-
-        ]
+    getNotes() {
+        return this.http.get<Note[]>(this.API_URL);
     }
 
     updateTitle(id: string, newTitle: string) {
@@ -40,7 +32,7 @@ export class NoteService {
     }
 
     createNote(note: Note) {
-        this.notes.unshift(note);
+        return this.http.post<Note>(this.API_URL, note);
     }
 
     createId = () => {

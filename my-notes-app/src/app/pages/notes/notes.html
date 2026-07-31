@@ -4,7 +4,13 @@
 
     <h2>Notes </h2>
 
-    <ul class="note-list" >
+    @if (hasError) {
+        <h2> No se han podido cargar las notas</h2>
+    } @else if (isLoading) {
+        <h2> Cargando...</h2>
+    } @else {
+
+         <ul class="note-list" >
         <li>
             <app-create-note></app-create-note>
         </li>
@@ -16,5 +22,7 @@
             </li>
         }
     </ul>
+
+    }
 
 </section>
