@@ -25,7 +25,30 @@ export class CreateNote {
       marked: false
     }
 
-    this.noteService.createNote(newNote);
-    this.noteTitle = '';
+    this.createNote(newNote);
+  }
+
+  createNote(newNote: Note) {
+
+    this.noteService.createNote(newNote).subscribe({
+      next: () => {
+        this.getNotes();
+        this.noteTitle = '';
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
+  }
+
+  getNotes() {
+    this.noteService.getNotes().subscribe({
+      next: (data) => {
+        this.noteService.notes = data.reverse();
+      },
+      error: (e) => {
+        console.log(e);
+      }
+    })
   }
 }
